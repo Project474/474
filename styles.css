@@ -1,0 +1,77 @@
+/* Live animated background */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .background {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e, #1b1b2f);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: -1;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Content container */
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 10% auto;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 255, 128, 0.3);
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* Buttons */
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  button.start {
+    background-color: #28a745;
+  }
+  
+  button.stop {
+    background-color: #dc3545;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  }
+  
+  #statusMessage {
+    margin-top: 30px;
+    font-style: italic;
+    color: #ccc;
+  }
+  
